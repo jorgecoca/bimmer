@@ -56,7 +56,17 @@ List<Vehicle> _getVehicles() => [
         yearOfConstruction: 200,
         likes: 287,
         imageUrl:
-            'hips.hearstapps.com/roa.h-cdn.co/assets/15/41/1024x512/landscape-1444321971-bmw-z8-2001-1024x768-wallpaper-03.jpg',
+            'https://hips.hearstapps.com/roa.h-cdn.co/assets/15/41/1024x512/landscape-1444321971-bmw-z8-2001-1024x768-wallpaper-03.jpg?resize=768:*',
+        history:
+            'Just look at the Z8. Take a minute, sit back, and look at it. It\'s gorgeous. It\'s amazing. It\'s also the last truly great car BMW ever made. The BMW Z8 is also one of the few cars in the past 20 years that\'s appreciated significantly. Clean, desirable examples are selling for more than double what they originally cost, and even the cheapest versions aren\'t going for much less than \$200,000.',
+      ),
+      Vehicle(
+        id: 'e52-z8',
+        name: 'E52 Z8',
+        yearOfConstruction: 200,
+        likes: 287,
+        imageUrl:
+            'https://hips.hearstapps.com/roa.h-cdn.co/assets/15/41/1024x512/landscape-1444321971-bmw-z8-2001-1024x768-wallpaper-03.jpg?resize=768:*',
         history:
             'Just look at the Z8. Take a minute, sit back, and look at it. It\'s gorgeous. It\'s amazing. It\'s also the last truly great car BMW ever made. The BMW Z8 is also one of the few cars in the past 20 years that\'s appreciated significantly. Clean, desirable examples are selling for more than double what they originally cost, and even the cheapest versions aren\'t going for much less than \$200,000.',
       ),
