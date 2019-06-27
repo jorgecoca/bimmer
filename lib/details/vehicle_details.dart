@@ -19,20 +19,74 @@ class VehicleDetails extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            FadeInImage.memoryNetwork(
-              placeholder: kTransparentImage,
-              image: vehicle.imageUrl,
+            Hero(
+              tag: vehicle.id,
+              child: FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                image: vehicle.imageUrl,
+              ),
             ),
-            Text('${vehicle.yearOfConstruction}'),
+            Text(
+              '${vehicle.yearOfConstruction}',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ),
             Text(vehicle.history)
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.favorite),
-        onPressed: null,
+      floatingActionButton: LikeFloatingActionButton(
+        likes: vehicle.likes,
       ),
+    );
+  }
+}
+
+class LikeFloatingActionButton extends StatefulWidget {
+  final int likes;
+
+  LikeFloatingActionButton({
+    Key key,
+    @required this.likes,
+  }) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _LikeFloatingActionButton(likes);
+}
+
+class _LikeFloatingActionButton extends State<LikeFloatingActionButton> {
+  int totalLikes;
+  bool didLike = false;
+
+  _LikeFloatingActionButton(this.totalLikes);
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(didLike ? Icons.thumb_down : Icons.favorite),
+          Text(
+            '$totalLikes',
+            style: TextStyle(fontSize: 10),
+          ),
+        ],
+      ),
+      onPressed: () {
+        setState(() {
+          if (didLike) {
+            totalLikes--;
+            didLike = false;
+          } else {
+            didLike = true;
+            totalLikes++;
+          }
+        });
+      },
     );
   }
 }
